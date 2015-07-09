@@ -1,0 +1,17 @@
+You can query/set/replace/unset options with this command. The name is actually the section and the key separated by a dot, and the value will be escaped.
+
+Multiple lines can be added to an option by using the --add option. If you want to update or unset an option which can occur on multiple lines, a POSIX regexp value_regex needs to be given. Only the existing values that match the regexp are updated or unset. If you want to handle the lines that do not match the regex, just prepend a single exclamation mark in front (see also EXAMPLES).
+
+The type specifier can be either --int or --bool, to make git config ensure that the variable(s) are of the given type and convert the value to the canonical form (simple decimal number for int, a "true" or "false" string for bool), or --path, which does some path expansion (see --path below). If no type specifier is passed, no checks or transformations are performed on the value
+
+NAME
+git-diff - Show changes between commits, commit and working tree, etc
+
+SYNOPSIS
+'git diff' [options] [<commit>] [--] [<path>...]
+'git diff' [options] --cached [<commit>] [--] [<path>...]
+'git diff' [options] <commit> <commit> [--] [<path>...]
+'git diff' [options] <blob> <blob>
+'git diff' [options] [--no-index] [--] <path> <path>
+DESCRIPTION
+Show changes between the working tree and the index or a tree, changes between the index and a tree, changes between two trees, changes between two blob objects, or changes between two files on disk.
